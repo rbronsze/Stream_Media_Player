@@ -114,8 +114,6 @@ public class XMLFileEditor {
                 Attr musicPath = document.createAttribute("music_path");
                 musicPath.setValue((tab[row][5]).toString());
                 song.setAttributeNode(musicPath);
-                System.out.println("music_path");
-                System.out.println("   " + (tab[row][5]).toString());
                 
                 
             }

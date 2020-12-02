@@ -152,7 +152,6 @@ public class Fenetre extends JFrame{
         
         jtf = new JTextField();
         jtf.setText("Song List");
-        //System.out.println("/" + jtf.getText() + "/");
         
         button_pan.add(previous);
         button_pan.add(play);
@@ -188,7 +187,6 @@ public class Fenetre extends JFrame{
 
             @Override
             public void stateChanged(ChangeEvent e) {
-                //System.out.println(audio.getMediaPlayer().status().isPlaying());
                  controler.controlVolume(((JSlider)e.getSource()).getValue());//To change body of generated methods, choose Tools | Templates.
             }
         });  
@@ -439,8 +437,6 @@ public class Fenetre extends JFrame{
             
             int nbrows = ((SongTableModel)tab.getModel()).getRowCount();
             int nbcols = ((SongTableModel)tab.getModel()).getColumnCount()+2;
-            System.out.println("nbrows: " + nbrows);
-            System.out.println("nbcols: " + nbcols);
             
             try {
                 controler.controlSaveFile(jtf.getText(), nbrows, nbcols);
@@ -507,21 +503,6 @@ public class Fenetre extends JFrame{
             int column = e.getColumn(); 
             int nbrow = ((SongTableModel)e.getSource()).getRowCount();
             int nbcolumn = ((SongTableModel)e.getSource()).getColumnCount()+2;
-            // Cell update || Reset Table
-//            if(e.getType() == e.UPDATE){
-//                System.out.println("Update");
-//                if(column > -1){
-//                    Object musicPath = ((SongTableModel)e.getSource()).getValueAt(row, 4);
-//                    Object value = ((SongTableModel)e.getSource()).getValueAt(row, column);
-//                    try {
-//                        controler.controlUpdate(column, musicPath.toString(), value);
-//                    } catch (IOException ex) {
-//                        Logger.getLogger(Fenetre.class.getName()).log(Level.SEVERE, null, ex);
-//                    } catch (TagException ex) {
-//                        Logger.getLogger(Fenetre.class.getName()).log(Level.SEVERE, null, ex);
-//                    }
-//                }
-//            }
             if(e.getType() == e.UPDATE){
                 controler.controlUpdate(nbrow);
             }
@@ -535,18 +516,6 @@ public class Fenetre extends JFrame{
             if(e.getType() == e.INSERT){
                 controler.controlInsert(row, nbrow);
             }
-            
-            
-            
-            
-            
-            
-            
-            //System.out.println(row + " " + lrow + " " + column);
-//            SongTableModel model = (SongTableModel)e.getSource();
-//            Object data = model.getValueAt(row, column);
-//            System.out.println(row + " " + column + " " + data);
-            
         }
     }
 

@@ -143,16 +143,6 @@ public class Controler {
             }
         }
         
-//        if(songPath.endsWith(".mp3")){
-//            ((SongTableModel)this.view.getTab().getModel()).addRow(new MP3FileEditor().getMP3FileInfo(songPath));
-//            
-////            System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 0));
-////            System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 1));
-////            System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 2));
-////            System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 4));
-////            System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 5));
-//            //model.addSongToList(songPath);
-//        }
         
     }
     
@@ -168,7 +158,6 @@ public class Controler {
         
         String songPath = openFileChooser();
         if(songPath.endsWith(".xml")){
-            System.out.println(songPath);
             if(nbrows > 0){
                 //this.model.removeAll();
                 stopSongIfNeeded();
@@ -180,7 +169,6 @@ public class Controler {
             // Name of file into JTextField
             File file = new File(songPath);
             String[] output = file.getName().split(".xml");
-            System.out.println(output[0]);
             this.view.getJtf().setText(output[0]);
         }
         
@@ -229,11 +217,11 @@ public class Controler {
                     ((SongTableModel)this.view.getTab().getModel()).setValueAt(imgPath, row, column+1);
                 }
                 
-                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 0));
-                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 1));
-                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 2));
-                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 4));
-                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 5));
+//                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 0));
+//                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 1));
+//                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 2));
+//                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 4));
+//                System.out.println(((SongTableModel)this.view.getTab().getModel()).getValueAt(0, 5));
                 
             }
              
@@ -262,8 +250,6 @@ public class Controler {
     
     public void controlDelete(int row, int nbrow) throws IOException{
         
-        System.out.println("row: " + row);
-        System.out.println("nbrow: " + nbrow);
         
         if(row == this.model.getTrack()){
             controlStop();
@@ -298,7 +284,6 @@ public class Controler {
         
         fileChooser.setMultiSelectionEnabled(false);
         int returnVal = fileChooser.showOpenDialog(null);
-        //System.out.println("returnVal: " + returnVal);
             
         if (returnVal == JFileChooser.APPROVE_OPTION) {
                 //fileChooser.getSelectedFiles();

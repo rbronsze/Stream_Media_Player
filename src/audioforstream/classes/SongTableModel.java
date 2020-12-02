@@ -67,9 +67,6 @@ public class SongTableModel extends AbstractTableModel{
     
     public void addRow(Object[] data){
       int indice = 0, nbRow = this.getRowCount(), nbCol = this.getColumnCount();
-//       System.out.println("Adding Row:");
-//       System.out.println("    nbRow: " + nbRow);
-//       System.out.println("    nbCol: " + nbCol);
       Object temp[][] = this.data;
       this.data = new Object[nbRow+1][nbCol];
       for(Object[] value : temp)
@@ -94,7 +91,6 @@ public class SongTableModel extends AbstractTableModel{
          if(indice != position){
             temp[indice2++] = value;
          }
-         System.out.println("Indice = " + indice);
          indice++;
       }
       this.data = temp;

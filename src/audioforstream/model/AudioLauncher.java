@@ -83,7 +83,6 @@ public class AudioLauncher {
             @Override
             public void paused(MediaPlayer mediaPlayer) {
                 isPaused = true;
-                System.out.println(mediaPlayerComponent.mediaPlayer().status().isPlaying());
                 
             }
 
@@ -273,60 +272,6 @@ public class AudioLauncher {
   
     }
     
-    
-    
-//    public void setSongList(String xmlFilePath) throws ParserConfigurationException, SAXException, IOException{
-//        
-//        songList = openXMLFile(xmlFilePath);
-//        
-//    }
-    
-//    public void addSongToList(String songPath) throws IOException{
-//        
-////        MP3File mp3file = new MP3File(new File(songPath));
-//
-//        //this.songList.add(songPath);
-//        MP3File mp3file = new MP3File(songPath);
-//        Object[] donnee = new Object[]{ mp3file.getID3v2Tag().getSongTitle(),
-//                                        mp3file.getID3v2Tag().getLeadArtist(),
-//                                        mp3file.getID3v2Tag().getAlbumTitle(),
-//                                        null,
-//                                        songPath};
-//        
-//        
-//        ((SongTableModel)this.view.getTab().getModel()).addRow(donnee);
-//        
-//        
-//        
-//        //view.getTab().
-////        FrameBodyAPIC f;
-////        
-////                
-////        AbstractID3v2 tag = mp3file.getID3v2Tag();
-////        
-////        tag.setSongTitle("Prout");
-////        tag.setLeadArtist("LeProut");
-////        tag.setAlbumTitle("Reprout");
-////        tag.set
-//        
-////        System.out.println(mp3file.getID3v2Tag().getSongTitle());
-////        System.out.println(mp3file.getID3v2Tag().getLeadArtist());
-////        System.out.println(mp3file.getID3v2Tag().getAlbumTitle());
-//        
-////        mp3file.setID3v2Tag(tag);
-////        
-////        System.out.println(mp3file.getID3v2Tag().getSongTitle());
-////        System.out.println(mp3file.getID3v2Tag().getLeadArtist());
-////        System.out.println(mp3file.getID3v2Tag().getAlbumTitle());
-////        
-////        mp3file.save();
-//        
-////        mp3_list.get(track).getID3v2Tag().getSongTitle(),
-////                 mp3_list.get(track).getID3v2Tag().getLeadArtist(), 
-////                 mp3_list.get(track).getID3v2Tag().getAlbumTitle(),
-//        
-//        
-//    }
     
     private void start(String mrl) {
         mediaPlayerComponent.mediaPlayer().media().play(mrl);

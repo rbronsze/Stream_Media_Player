@@ -64,59 +64,6 @@ public class MP3FileEditor{
         
     }
     
-//    public boolean setMP3MusicTitle(String musicPath, String value) throws IOException{
-//        
-//        MP3File mp3file = new MP3File(new File(musicPath));
-//        
-//        AbstractID3v2 tag = mp3file.getID3v2Tag();
-//        tag.setSongTitle(value);
-//        
-//        mp3file.setID3v2Tag(tag);
-//        
-//        //mp3file.save(musicPath);
-//        
-//        mp3file.save();
-//        
-//        return true;
-//        
-//    }
-//    
-//    public boolean setMP3Artist(String musicPath, String value) throws IOException, TagException{
-//        
-//        MP3File mp3file = new MP3File(musicPath);
-//        System.out.println(musicPath);
-//        System.out.println(value);
-//        
-//        AbstractID3v2 tag = mp3file.getID3v2Tag();
-//        tag.setLeadArtist("Prout");
-//        
-//        mp3file.setID3v2Tag(tag);
-//        
-//        //mp3file.save(musicPath);
-//        
-//        mp3file.save();
-//        
-//        return true;
-//        
-//    }
-//    
-//    public boolean setMP3AlbumTitle(String musicPath, String value) throws IOException, TagException{
-//        
-//        MP3File mp3file = new MP3File(musicPath);
-//        
-//        AbstractID3v2 tag = mp3file.getID3v2Tag();
-//        tag.setLeadArtist(value);
-//        
-//        mp3file.setID3v2Tag(tag);
-//        
-//        //mp3file.save(musicPath);
-//        
-//        mp3file.save();
-//        
-//        return true;
-//        
-//    }
-    
     private String getAlbumArt(String path){
         String[] parts;
         parts = path.split("\\\\");
